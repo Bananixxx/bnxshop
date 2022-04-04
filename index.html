@@ -1,254 +1,73 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="en">
 <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Raport</title>
-        <link rel="stylesheet" href="main.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;800&display=swap" rel="stylesheet">      
+        <title>BNX-Shop</title>
+        <link rel="stylesheet" href="./css/main.css">
+        <script src="https://kit.fontawesome.com/3cc346f338.js" crossorigin="anonymous"></script>
+        <style>
+                @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;700&display=swap');
+        </style>
 </head>
 <body>
-        <div class="container">
-                <div class="box">
-                        <div class="item-list">
-                                <h2>RAPORTY</h2>
-                                <ul>
-                                        <li id="1" class="item-selector">Rozpoczęcie służby</li>
-                                        <li id="2" class="item-selector">Rozpoczęcie patrolu</li>
-                                        <li id="3" class="item-selector">Zakończenie patrolu</li>
-                                        <li id="4" class="item-selector">Strzały</li>
-                                        <li id="5" class="item-selector">Handel narkotykami</li>
-                                        <li id="6" class="item-selector">Kradzież pojazdu</li>
-                                        <li id="7" class="item-selector">Pościg</li>
-                                        <li id="8" class="item-selector">Zatrzymanie</li>
-                                        <li id="9" class="item-selector">Napad</li>
-                                        <li id="10" class="item-selector">Zatrzymanie drogowe</li>
-                                        <li id="11" class="item-selector">Zakończenie służby</li>
-                                        <li>...</li>
-                                </ul>
+        <header>
+                <img src="./img/logo.png" alt="">
+                <h1>Witaj w moim sklepie!</h1>
+                <h3>Sprawdź moją ofertę</h3>
+                <a href="#oferta"><i class="fa-solid fa-angles-down"></i></a>
+        </header>
+        <main>
+                <section>
+                        <div class="res-box-dc">
+                                <h2 style="font-weight: 700;">Discord Server</h2>
+                                <a href="">Dołącz</a>
                         </div>
-                        <div class="report-forms">
-                                <div class="duty-start hidden" id="1a">
-                                        <form>
-                                                <label>Godzina</label><br>
-                                                <input type="text"id="date1" class="date" autocomplete="off"><br>
-                                                <label>Imię i nazwisko</label><br>
-                                                <input type="text"><br>
-                                                <label>Numer odznaki</label><br>
-                                                <input type="text"><br>
-                                                <button onclick="addingDutyStartReport()">Dodaj</button>
-                                        </form>
+                </section>
+                <section>
+                        <div class="res-box" id="oferta">
+                                <h2>Oferta</h2>
+                                <h3>Hudy fivem</h3>
+                                <div class="res-box-items">
+                                        <div class="image">
+                                                <img src="./img/123.png" alt="">
+                                        </div>
+                                        <div class="text"><p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est alias recusandae porro, quis provident corrupti?</p></div>
                                 </div>
-                                <div class="patrol-start hidden" id="2a">
-                                        <form>
-                                                <label>Godzina</label><br>
-                                                <input type="text" id="date2" class="date" autocomplete="off"><br>
-                                                <label>Imię i nazwisko</label><br>
-                                                <input type="text"><br>
-                                                <label>Numer odznaki</label><br>
-                                                <input type="text"><br>
-                                                <label>Jednostka</label><br>
-                                                <input type="text"><br>
-                                                <button onclick="addingNewReport()">Dodaj</button>
-                                        </form>
+                                <h3>Pluginy Minecraft</h3>
+                                <div class="res-box-items">
+                                        <div class="text"><p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est alias recusandae porro, quis provident corrupti?</p></div>
+                                        <div class="image img-alt">
+                                                <img src="./img/mc.jpg" alt="">
+                                        </div>
                                 </div>
-                                <div class="patrol-end hidden" id="3a">
-                                        <form>
-                                                <label>Godzina</label><br>
-                                                <input type="text" id="date3" class="date" autocomplete="off"><br>
-                                                <label>Imię i nazwisko</label><br>
-                                                <input type="text"><br>
-                                                <label>Numer odznaki</label><br>
-                                                <input type="text"><br>
-                                                <button onclick="addingNewReport()">Dodaj</button>
-                                        </form>
+                                <h3>Strony WWW</h3>
+                                <div class="res-box-items">
+                                        <div class="image">
+                                                <img src="./img/www.jpg" alt="">
+                                        </div>
+                                        <div class="text"><p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est alias recusandae porro, quis provident corrupti?</p></div>
                                 </div>
-                                <div class="shots hidden" id="4a">
-                                        <form>
-                                                <label>Godzina</label><br>
-                                                <input type="text" id="date4" class="date" autocomplete="off"><br>
-                                                <label>Imię i nazwisko</label><br>
-                                                <input type="text"><br>
-                                                <label>Numer odznaki</label><br>
-                                                <input type="text"><br>
-                                                <label>Lokalizacja</label><br>
-                                                <input type="text"><br>
-                                                <label>Liczba funkcjonariuszy</label><br>
-                                                <input type="text"><br>
-                                                <label>Pojazd na miejscu</label><br>
-                                                <input type="text"><br>
-                                                <label>Liczba podejrzanych</label><br>
-                                                <input type="text"><br>
-                                                <label>Próba ucieczki</label><br>
-                                                <input type="text"><br>
-                                                <label>Rodzaj broni</label><br>
-                                                <input type="text"><br>
-                                                <label>Ilość broni</label><br>
-                                                <input type="text"><br>
-                                                <button onclick="addingNewReport()">Dodaj</button>
-                                        </form>
-                                </div>
-                                <div class="narcos hidden" id="5a">
-                                        <form>
-                                                <label>Godzina</label><br>
-                                                <input type="text" id="date5" class="date" autocomplete="off"><br>
-                                                <label>Imię i nazwisko</label><br>
-                                                <input type="text"><br>
-                                                <label>Numer odznaki</label><br>
-                                                <input type="text"><br>
-                                                <label>Lokalizacja</label><br>
-                                                <input type="text"><br>
-                                                <label>Liczba funkcjonariuszy</label><br>
-                                                <input type="text"><br>
-                                                <label>Pojazd na miejscu</label><br>
-                                                <input type="text"><br>
-                                                <label>Liczba podejrzanych</label><br>
-                                                <input type="text"><br>
-                                                <label>Próba ucieczki</label><br>
-                                                <input type="text"><br>
-                                                <label>Rodzaj narkotyku</label><br>
-                                                <input type="text"><br>
-                                                <label>Ilość</label><br>
-                                                <input type="text"><br>
-                                                <button onclick="addingNewReport()">Dodaj</button>
-                                        </form>
-                                </div>
-                                <div class="auto-theft hidden" id="6a">
-                                        <form>
-                                                <label>Godzina</label><br>
-                                                <input type="text" id="date6" class="date" autocomplete="off"><br>
-                                                <label>Imię i nazwisko</label><br>
-                                                <input type="text"><br>
-                                                <label>Numer odznaki</label><br>
-                                                <input type="text"><br>
-                                                <label>Lokalizacja</label><br>
-                                                <input type="text"><br>
-                                                <label>Liczba funkcjonariuszy</label><br>
-                                                <input type="text"><br>
-                                                <label>Skradziony pojazd</label><br>
-                                                <input type="text"><br>
-                                                <label>Liczba podejrzanych</label><br>
-                                                <input type="text"><br>
-                                                <label>Próba ucieczki</label><br>
-                                                <input type="text"><br>
-                                                <label>Odnaleziony</label><br>
-                                                <input type="text"><br>
-                                                <button onclick="addingNewReport()">Dodaj</button>
-                                        </form>
-                                </div>
-                                <div class="pursuit hidden" id="7a">
-                                        <form>
-                                                <label>Godzina</label><br>
-                                                <input type="text" id="date7" class="date" autocomplete="off"><br>
-                                                <label>Imię i nazwisko</label><br>
-                                                <input type="text"><br>
-                                                <label>Numer odznaki</label><br>
-                                                <input type="text"><br>
-                                                <label>Ścigany pojazd</label><br>
-                                                <input type="text"><br>
-                                                <label>Dane podejrzanego</label><br>
-                                                <input type="text"><br>
-                                                <label>Ilośc jednostek</label><br>
-                                                <input type="text"><br>
-                                                <label>Czas trwania</label><br>
-                                                <input type="text"><br>
-                                                <label>Wynik pościgu</label><br>
-                                                <input type="text"><br>
-                                                <button onclick="addingNewReport()">Dodaj</button>
-                                        </form>
-                                </div>
-                                <div class="arrest hidden" id="8a">
-                                        <form>
-                                                <label>Godzina</label><br>
-                                                <input type="text" id="date8" class="date" autocomplete="off"><br>
-                                                <label>Imię i nazwisko</label><br>
-                                                <input type="text"><br>
-                                                <label>Numer odznaki</label><br>
-                                                <input type="text"><br>
-                                                <label>Lokalizacja</label><br>
-                                                <input type="text"><br>
-                                                <label>Dane zatrzymanego</label><br>
-                                                <input type="text"><br>
-                                                <label>Powód zatrzymania</label><br>
-                                                <input type="text"><br>
-                                                <label>Liczba funkcjonariuszy</label><br>
-                                                <input type="text"><br>
-                                                <label>Próba ucieczki</label><br>
-                                                <input type="text"><br>
-                                                <button onclick="addingNewReport()">Dodaj</button>
-                                        </form>
-                                </div>
-                                <div class="roberry hidden" id="9a">
-                                        <form>
-                                                <label>Godzina</label><br>
-                                                <input type="text" id="date9" class="date" autocomplete="off"><br>
-                                                <label>Imię i nazwisko</label><br>
-                                                <input type="text"><br>
-                                                <label>Numer odznaki</label><br>
-                                                <input type="text"><br>
-                                                <label>Lokalizacja</label><br>
-                                                <input type="text"><br>
-                                                <label>Obiekt</label><br>
-                                                <input type="text"><br>
-                                                <label>liczba funkcjonariuszy</label><br>
-                                                <input type="text"><br>
-                                                <label>Rodzaj jednostek</label><br>
-                                                <input type="text"><br>
-                                                <label>Liczba napastników</label><br>
-                                                <input type="text"><br>
-                                                <label>Próba ucieczki</label><br>
-                                                <input type="text"><br>
-                                                <button onclick="addingNewReport()">Dodaj</button>
-                                        </form>
-                                </div>
-                                <div class="road-stop hidden" id="10a">
-                                        <form>
-                                                <label>Godzina</label><br>
-                                                <input type="text" id="date10" class="date" autocomplete="off"><br>
-                                                <label>Imię i nazwisko</label><br>
-                                                <input type="text"><br>
-                                                <label>Numer odznaki</label><br>
-                                                <input type="text"><br>
-                                                <label>Lokalizacja</label><br>
-                                                <input type="text"><br>
-                                                <label>Dane kierowcy</label><br>
-                                                <input type="text"><br>
-                                                <label>Pojazd</label><br>
-                                                <input type="text"><br>
-                                                <label>Ilość osób w aucie</label><br>
-                                                <input type="text"><br>
-                                                <label>Liczba funkcjonariuszy</label><br>
-                                                <input type="text"><br>
-                                                <label>Próba ucieczki</label><br>
-                                                <input type="text"><br>
-                                                <button onclick="addingNewReport()">Dodaj</button>
-                                        </form>
-                                </div>
-                                <div class="duty-end hidden" id="11a">
-                                        <form>
-                                                <label>Godzina</label><br>
-                                                <input type="text"id="date11" class="date" autocomplete="off"><br>
-                                                <label>Imię i nazwisko</label><br>
-                                                <input type="text"><br>
-                                                <label>Numer odznaki</label><br>
-                                                <input type="text"><br>
-                                                <button onclick="addingDutyStartReport()">Dodaj</button>
-                                        </form>
+                                <h3>CSS UI dla FiveM</h3>
+                                <div class="res-box-items">
+                                        <div class="text"><p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est alias recusandae porro, quis provident corrupti?</p></div>
+                                        <div class="image img-alt">
+                                                <img src="./img/ui.jpg" alt="">
+                                        </div>
                                 </div>
                         </div>
+                </section>
+        </main>
+        <footer>
+                <div class="res-box-footer">
+                        <h2>Kontakt</h2>
+                        <ul>
+                                <li><i class="fa-solid fa-envelope"></i> xyz@example.com</li>
+                                <li><i class="fa-brands fa-discord"></i> Bananixxx</li>
+                                <li><a href="">Discord Server <i class="fa-solid fa-arrow-pointer"></i></a></li>
+                        </ul>
                 </div>
-                <div class="box">
-                        <h2>OUTPUT</h2>
-                        <div class="output">
-                                <div class="text" id="content">
-                                        
-                                </div>
-                        </div>
-                </div>
-        </div>
+        </footer>
 </body>
-<script src="main.js"></script>
 </html>
