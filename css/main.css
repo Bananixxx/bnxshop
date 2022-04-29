@@ -11,7 +11,6 @@ body {
         color: #fff;
         width: 100%;
         height: 100%;
-        overflow: auto;
         font-size: 1em;
 }
 
@@ -57,11 +56,12 @@ p {
 
 @keyframes example {
         from {padding-top: 0;}
-        to {padding-top: 0.35em;}
+        to {padding-top: 0.75em;}
 }
 
 header a {
         color: #fff;
+        position: relative;
         font-size: 4em;
         animation-name: example;
         animation-duration: .4s;
@@ -131,11 +131,17 @@ main img {
 
 .image {
         width: 65%;
-        transform: rotate(-2deg);
+        transform: rotate(-3deg);
+        transition: transform .5s ease-in-out;
+        transition-delay: .3s;
+}
+
+.image:hover {
+        transform: scale(110%);
 }
 
 .img-alt {
-        transform: rotate(2deg);
+        transform: rotate(3deg);
 }
 
 .text {
@@ -189,3 +195,117 @@ main img {
         border-radius: 15px;
         border: 1px solid #ffffff;
       }
+
+@media (max-width: 1024px) {
+        header img {
+                max-width: 300px;
+        }
+        .res-box {
+                width: 90%;
+        }
+        main h3 {
+                font-size: 2rem;
+        }
+        .image {
+                transition: none;
+        }
+        *::-webkit-scrollbar {
+                width: 0px;
+        }
+        * {
+                scrollbar-width: none;
+                scrollbar-color: #111 #222;
+        }
+        .res-box-items {
+                flex-direction: column;
+        }
+        .image {
+                width: 100%;
+                transform: rotate(0);
+        }
+        .text {
+                width: 100%;
+        }
+        .reverse {
+                flex-direction: column-reverse;
+        }
+        main img {
+                outline: 0;
+        }
+        main h3 {
+                text-align: center;
+                padding: 0;
+        }
+        main h2 {
+                font-size: 2.75rem;
+        }
+        .res-box-items {
+                gap: 0;
+        }
+}
+
+@media (max-width: 768px) {
+        li {
+                font-size: 1.5rem;
+        }
+}
+
+@media (max-width: 576px) {
+        header img {
+                max-width: 320px;
+        }
+        header h1 {
+                margin: .2em 0;
+        }
+        header h3 {
+                margin: .2em 0;
+        }
+        .res-box-dc h2 {
+                font-size: 2.15rem;
+        }
+        .res-box-dc a {
+                font-size: 1.5em;
+        }
+        .text p {
+                font-size: 1.5rem;
+        }
+}
+
+@media (max-width: 360px) {
+        header {
+                padding: 1em;
+        }
+        header img {
+                max-width: 280px;
+        }
+        header h1 {
+                font-size: 2.25rem;
+        }
+        header h3 {
+                font-size: 1.5rem;
+        }
+        .res-box-dc h2 {
+                font-size: 1.5rem;
+        }
+        .res-box-dc a {
+                font-size: 1em;
+        }
+        .res-box h2 {
+                margin: .2em 0;
+                font-size: 3.5rem;
+        }
+        .res-box h3 {
+                margin: 1em 0;
+                font-size: 1.7rem;
+        }
+        li {
+                font-size: .7rem;
+        }
+        .res-box {
+                width: 100%;
+                margin: 0 auto;
+        }
+        .image img {
+                border-radius: 0;
+        }
+}
